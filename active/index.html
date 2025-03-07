@@ -100,6 +100,28 @@
             // Call tabCloak() to set the title and icon on page load
             tabCloak(); 
          });
+
+         // Function to apply the theme to the page
+   function applyTheme(theme) {
+      // Remove existing theme classes from the body
+      document.body.classList.remove('dark-theme', 'light-theme', 'sunset-theme', 'hacker-theme');
+      
+      // Add the selected theme class to the body
+      document.body.classList.add(theme);
+
+      // Store the theme in localStorage so it persists across pages
+      localStorage.setItem('theme', theme);
+   }
+
+   // Wait for the DOM to be fully loaded
+   document.addEventListener("DOMContentLoaded", function() {
+      // Check if a theme is stored in localStorage and apply it
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+         applyTheme(savedTheme);
+      }
+   });
+
       </script>
 
       <script src="uv/uv.bundle.js" charset="UTF-8" defer></script>
