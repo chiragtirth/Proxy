@@ -94,6 +94,7 @@
             <button class="cloak-button" onclick="themeLight()">Light</button>
             <button class="cloak-button" onclick="themeSunset()">Sunset</button>
             <button class="cloak-button" onclick="themeHacker()">Hacker</button>
+            <button class="cloak-button" onclick="themeLava()">Lava</button>
          </div>
       </div>
 
@@ -138,6 +139,12 @@
             midtoneColor: 0x0,
             lowlightColor: 0x0,
             baseColor: 0x61CF5A
+         },
+         lava: {
+            highlightColor: 0x0,
+            midtoneColor: 0x0,
+            lowlightColor: 0x0,
+            baseColor: 0xE42217
          }
       };
 
@@ -162,6 +169,9 @@
    }
 
    function themeHacker() {
+      applyTheme('hacker');
+   }
+          function themeLava() {
       applyTheme('hacker');
    }
 
