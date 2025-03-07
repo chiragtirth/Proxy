@@ -144,12 +144,18 @@ body {
 }
 
 .github-link {
-   position: fixed;
-   color: white;
-   text-shadow: 0 0 8px white;
-   right: 10px;
-   bottom: 10px;
-   font-family: "Exo", sans-serif;
-   z-index: 1000;
+   position: fixed; /* Ensure it appears */
+   bottom: 20px;
+   right: 20px;
+   background: rgba(255, 255, 255, 0.1); /* Semi-transparent */
+   padding: 10px 15px;
+   border-radius: 5px;
+   font-size: 16px;
+   text-decoration: none;
+   transition: all 0.3s ease;
 }
+.github-link:hover {
+   background: rgba(255, 255, 255, 0.3);
+}
+
 
