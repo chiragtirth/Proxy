@@ -149,5 +149,6 @@ body {
    right: 10px;
    bottom: 10px;
    font-family: "Exo", sans-serif;
+   z-index: 100;
 }
 
