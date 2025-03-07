@@ -96,6 +96,7 @@
             <button class="cloak-button" onclick="themeHacker()">Hacker</button>
             <button class="cloak-button" onclick="themeLava()">Lava</button>
             <button class="cloak-button" onclick="themeShock()">Shock</button>
+            <button class="cloak-button" onclick="themeDeepsea()">Deep Sea</button>
          </div>
       </div>
 
@@ -152,6 +153,12 @@
             midtoneColor: 0x0,
             lowlightColor: 0x0,
             baseColor: 0xcde746
+         },
+          deepsea: {
+            highlightColor: 0x0,
+            midtoneColor: 0x0,
+            lowlightColor: 0x0,
+            baseColor: 0x0000FF
          }
       };
 
@@ -183,6 +190,9 @@
    }
          function themeShock() {
       applyTheme('shock');
+   }
+         function themeDeepsea() {
+      applyTheme('deepsea');
    }
 
    // Check for stored theme in localStorage on page load
