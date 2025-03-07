@@ -5,15 +5,12 @@
       <title>Nyx V1</title>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
-
-
-
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <link rel="icon" type="image/x-icon" href="/icon.png">
       <link rel="manifest" href="/manifest.json">
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
       <link href="style.css" rel="stylesheet">
       <style>
          body, html {
@@ -42,23 +39,21 @@
       <div id="vanta-bg"></div>
       <div id="content">
          <h1>Nyx V1</h1>
-         
-       <div class="top-bar">
-   <div class="left-section">
-      <img src="/icon.png" alt="icon">
-      <a href="index.html" class="span-link"><span>Nyx V1</span></a>
-   </div>
-   <div class="right-section">
-     <a href="settings.html" class="settings-icon">
-            <i class="fas fa-cog"></i>
-         </a>
-   </div>
-</div>
-
+         <div class="top-bar">
+            <div class="left-section">
+               <img src="/icon.png" alt="icon">
+               <a href="index.html" class="span-link"><span>Nyx V1</span></a>
+            </div>
+            <div class="right-section">
+               <a href="settings.html" class="settings-icon">
+                  <i class="fas fa-cog"></i>
+               </a>
+            </div>
+         </div>
          <form id="uv-form">
             <div class="input-container">
                <i class="fas fa-search"></i>
-               <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden"/> 
+               <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden"/>
                <input id="uv-address" class="input" name="text" type="text" placeholder="Search the web..."/>
             </div>
          </form>
@@ -70,8 +65,25 @@
       <a href="https://github.com/chompypotato/Nyx/" class="github-link">Github</a>
 
       <script>
+         // Define tabCloak() globally so it can be called anywhere
+         function tabCloak() {
+            var newTitle = localStorage.getItem('cloakedTitle');
+            var newIcon = localStorage.getItem('cloakedIcon');
 
+            if (newTitle === null || newTitle === '') {
+                alert('No Cloak Detected. Please select one in settings.');
+            } else {
+                localStorage.setItem('tabTitle', newTitle);
+                localStorage.setItem('tabIcon', newIcon);
+                document.title = newTitle;
+                var icon = document.querySelector('link[rel="icon"]');
+                icon.setAttribute('href', newIcon);
+            }
+         }
+
+         // Wait for the DOM to be fully loaded
          document.addEventListener("DOMContentLoaded", function() {
+            // Initialize VANTA.FOG for background
             VANTA.FOG({
                el: "#vanta-bg",
                mouseControls: true,
@@ -85,12 +97,10 @@
                baseColor: 0x4a4a4a
             });
 
-            // Call tabCloak() automatically when the page loads
+            // Call tabCloak() to set the title and icon on page load
             tabCloak(); 
          });
-</script>
-
-    
+      </script>
 
       <script src="uv/uv.bundle.js" charset="UTF-8" defer></script>
       <script src="uv/uv.config.js" charset="UTF-8" defer></script>
