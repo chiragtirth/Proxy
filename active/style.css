@@ -12,12 +12,11 @@ body {
    min-height: 100vh;
    display: flex;
    flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   gap: 20px;
+   justify-content: flex-start; /* Aligns the content to the top */
    text-align: center;
    font-family: 'Exo', sans-serif;
 }
+
 
 /* Cool Search Bar */
 .input-container {
