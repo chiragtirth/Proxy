@@ -124,12 +124,9 @@
             }
          }
 
-        function openCloaker() {
-  // Try to open Kahoot in the current window
+     function openCloaker() {
+  // Try to open a new window with about:blank
   try {
-    window.location.replace("https://kahoot.it");
-
-    // Open a new window with about:blank
     var win = window.open('about:blank', '_blank');
 
     // Check if the new window was successfully opened
@@ -150,11 +147,18 @@
     win.document.body.style.height = "100vh";
     win.document.body.appendChild(iframe);
 
+    // Proceed with redirect to Kahoot if no error occurred
+    window.location.replace("https://kahoot.it");
+
   } catch (e) {
-    // If an error occurs (e.g., popup blocked), show an alert
-    alert("Please allow popups and redirects for this site for the about:blank to launch.");
+    // If an error occurs (e.g., popup blocked), show an alert and don't redirect
+    alert("Please allow popups and redirects for this site for the about:blank to open.");
   }
 }
+
+         
+//also
+         setCloak();
 
       </script>
 
