@@ -89,6 +89,7 @@ body {
 /* Header Styling */
 #content h2 {
    margin-bottom: 0px;
+      margin-top: 80px; /* Pushes it below the top bar */
    font-family: "Exo", sans-serif !important; 
    font-size: 50px;
    color: #e0e0e0;
