@@ -12,8 +12,19 @@ body {
    min-height: 100vh;
    display: flex;
    flex-direction: column;
-   justify-content: flex-start; /* Keep it aligned to the top */
-   padding-top: 80px; /* Push the content below the top bar */
+   justify-content: center;
+   align-items: center;
+   gap: 20px;
+   text-align: center;
+   font-family: 'Exo', sans-serif;
+}
+
+#content2 {
+   height: auto;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start; /* Aligns the content to the top */
    text-align: center;
    font-family: 'Exo', sans-serif;
 }
@@ -86,7 +97,7 @@ body {
    transform: scale(1.05);
 }
 
-#content h2 {
+#content2 h2 {
    margin-bottom: 0;
    font-family: "Exo", sans-serif !important;
    font-size: 50px;
@@ -97,7 +108,7 @@ body {
                 0 0 30px rgba(255, 255, 255, 0.4);
 }
 
-#content h2:hover {
+#content2 h2:hover {
    color: white;
    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 
                 0 0 40px rgba(255, 255, 255, 1);
