@@ -7,8 +7,6 @@ body {
    padding: 0;
 }
 
-
-
 #content {
    height: auto;
    min-height: 100vh;
@@ -43,8 +41,8 @@ body {
 }
 
 .input:hover, .input:focus {
-   border-color: cyan;
-   box-shadow: 0 0 10px cyan;
+   border-color: white;
+   box-shadow: 0 0 10px white;
 }
 
 /* Search Icon */
@@ -53,7 +51,7 @@ body {
    left: 15px;
    top: 50%;
    transform: translateY(-50%);
-   color: cyan;
+   color: white;
    font-size: 1.2rem;
    pointer-events: none;
 }
@@ -65,7 +63,7 @@ body {
 }
 
 .input:focus::placeholder {
-   color: cyan;
+   color: white;
    opacity: 0.6;
 }
 
@@ -77,14 +75,14 @@ body {
    color: #e0e0e0;
    transition: all 0.3s ease;
    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
-             0 0 20px rgba(255, 255, 255, 0.6), 
-             0 0 30px rgba(255, 255, 255, 0.4);
+                0 0 20px rgba(255, 255, 255, 0.6), 
+                0 0 30px rgba(255, 255, 255, 0.4);
 }
 
 #content h1:hover {
-   color: cyan;
-   text-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 
-                0 0 40px rgba(0, 255, 255, 1);
+   color: white;
+   text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 
+                0 0 40px rgba(255, 255, 255, 1);
    transform: scale(1.05);
 }
 
@@ -124,7 +122,7 @@ body {
 }
 
 .left-section a:hover {
-   color: cyan;
+   color: white;
 }
 
 /* Right Section */
@@ -141,6 +139,6 @@ body {
 }
 
 .right-section a:hover {
-   color: cyan;
-   text-shadow: 0 0 8px cyan;
+   color: white;
+   text-shadow: 0 0 8px white;
 }
