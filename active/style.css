@@ -39,6 +39,7 @@ body {
    border-radius: 25px;
    transition: all 0.3s ease;
    outline: none;
+   font-family: 'Exo', sans-serif;
 }
 
 .input:hover, .input:focus {
@@ -71,7 +72,7 @@ body {
 /* Header Styling */
 #content h1 {
    margin-bottom: 20px;
-   font-family: "Exo", sans-serif;
+   font-family: "Exo", sans-serif !important; 
    font-size: 96px;
    text-transform: uppercase;
    color: #e0e0e0;
