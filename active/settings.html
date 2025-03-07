@@ -124,25 +124,36 @@
             }
          }
 
-         function openCloaker() {
-  // Open Kahoot in the current window
-  window.location.replace("https://kahoot.it");
+        function openCloaker() {
+  // Try to open Kahoot in the current window
+  try {
+    window.location.replace("https://kahoot.it");
 
-  // Open a new window with about:blank
-  var win = window.open('about:blank', '_blank');
-  
-  // Set up the iframe for cloaked content
-  var url = window.location.hostname;
-  var iframe = win.document.createElement('iframe');
-  iframe.style.width = "100%";
-  iframe.style.height = "100%";
-  iframe.style.border = "none";
-  iframe.src = url;
+    // Open a new window with about:blank
+    var win = window.open('about:blank', '_blank');
 
-  // Style the body of the new window to fit the iframe
-  win.document.body.style.margin = "0";
-  win.document.body.style.height = "100vh";
-  win.document.body.appendChild(iframe);
+    // Check if the new window was successfully opened
+    if (!win) {
+      throw new Error("Popup blocked");
+    }
+
+    // Set up the iframe for cloaked content
+    var url = window.location.hostname;
+    var iframe = win.document.createElement('iframe');
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    iframe.style.border = "none";
+    iframe.src = 'https://' + url; // Ensure the URL is complete (with protocol)
+
+    // Style the body of the new window to fit the iframe
+    win.document.body.style.margin = "0";
+    win.document.body.style.height = "100vh";
+    win.document.body.appendChild(iframe);
+
+  } catch (e) {
+    // If an error occurs (e.g., popup blocked), show an alert
+    alert("Please allow popups and redirects for this site for the about:blank to launch.");
+  }
 }
 
       </script>
