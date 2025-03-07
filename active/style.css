@@ -158,4 +158,15 @@ body {
    background: rgba(255, 255, 255, 0.3);
 }
 
+.settings-icon {
+         color: white;
+         font-size: 24px;
+         margin-right: 20px;
+         text-decoration: none;
+         transition: 0.3s;
+      }
+
+      .settings-icon:hover {
+         text-shadow: 0 0 10px white;
+      }
 
