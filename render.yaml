@@ -1,7 +1,6 @@
 services:
   - name: Nyx
     type: web
-    runtime: static
     env: static
-    publish_path: .
     branch: main
+    staticPublishPath: .
