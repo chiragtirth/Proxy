@@ -142,3 +142,12 @@ body {
    color: white;
    text-shadow: 0 0 8px white;
 }
+
+.github-link {
+   color: white;
+   text-shadow: 0 0 8px white;
+   right: 10px;
+   bottom: 10px;
+   font-family: "Exo", sans-serif;
+}
+
