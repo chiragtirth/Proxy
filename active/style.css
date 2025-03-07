@@ -86,6 +86,25 @@ body {
    transform: scale(1.05);
 }
 
+/* Header Styling */
+#content h2 {
+   margin-bottom: 20px;
+   font-family: "Exo", sans-serif !important; 
+   font-size: 96px;
+   color: #e0e0e0;
+   transition: all 0.3s ease;
+   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                0 0 20px rgba(255, 255, 255, 0.6), 
+                0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+#content h2:hover {
+   color: white;
+   text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 
+                0 0 40px rgba(255, 255, 255, 1);
+   transform: scale(1.05);
+}
+
 /* Top Navigation Bar */
 .top-bar {
    position: fixed;
