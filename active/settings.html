@@ -76,6 +76,7 @@
 <h2>Cloaks:</h2>
          <!-- Cloaking Buttons -->
          <div class="button-container">
+            <button class="cloak-button" onclick="openCloaker()">Cloak as about:blank</button>
             <button class="cloak-button" onclick="driveCloak()">Cloak as Google Drive</button>
             <button class="cloak-button" onclick="googleCloak()">Cloak as Google Docs</button>
          </div>
@@ -122,6 +123,28 @@
                icon.setAttribute('href', newIcon);
             }
          }
+
+         function openCloaker() {
+  // Open Kahoot in the current window
+  window.location.replace("https://kahoot.it");
+
+  // Open a new window with about:blank
+  var win = window.open('about:blank', '_blank');
+  
+  // Set up the iframe for cloaked content
+  var url = window.location.hostname;
+  var iframe = win.document.createElement('iframe');
+  iframe.style.width = "100%";
+  iframe.style.height = "100%";
+  iframe.style.border = "none";
+  iframe.src = url;
+
+  // Style the body of the new window to fit the iframe
+  win.document.body.style.margin = "0";
+  win.document.body.style.height = "100vh";
+  win.document.body.appendChild(iframe);
+}
+
       </script>
 
       <script src="uv/uv.bundle.js" charset="UTF-8" defer></script>
