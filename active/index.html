@@ -81,25 +81,24 @@
             }
          }
 
-         // Wait for the DOM to be fully loaded
-         document.addEventListener("DOMContentLoaded", function() {
-            // Initialize VANTA.FOG for background
-            VANTA.FOG({
-               el: "#vanta-bg",
-               mouseControls: true,
-               touchControls: true,
-               gyroControls: false,
-               minHeight: 200.00,
-               minWidth: 200.00,
-               highlightColor: 0x0,
-               midtoneColor: 0x0,
-               lowlightColor: 0x0,
-               baseColor: 0x4a4a4a
-            });
+         
+    // Initialize VANTA.FOG for background
+VANTA.FOG({
+   el: "#vanta-bg",
+   mouseControls: true,
+   touchControls: true,
+   gyroControls: false,
+   minHeight: 200.00,
+   minWidth: 200.00,
+   highlightColor: 0x0,
+   midtoneColor: 0x0,
+   lowlightColor: 0x0,
+   baseColor: 0x4a4a4a
+});
 
-            // Call tabCloak() to set the title and icon on page load
-            tabCloak(); 
-         });
+// Call tabCloak() to set the title and icon on page load
+tabCloak(); 
+
 
          // Function to apply theme to Vanta fog
          function applyTheme(theme) {
