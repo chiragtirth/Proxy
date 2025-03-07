@@ -2,19 +2,18 @@
 <html>
    <head>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Nyx V1</title>
+      <title>Nyx V1 | Settings</title>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
-
-
 
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <link rel="icon" type="image/x-icon" href="/icon.png">
       <link rel="manifest" href="/manifest.json">
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
       <link href="style.css" rel="stylesheet">
+      
       <style>
          body, html {
             margin: 0;
@@ -36,6 +35,28 @@
             text-align: center;
             color: white;
          }
+         .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 50px;
+         }
+         .cloak-button {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: 'Exo', sans-serif;
+         }
+         .cloak-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 10px white;
+         }
       </style>
    </head>
    <body>
@@ -43,36 +64,65 @@
       <div id="content">
          
          
-       <div class="top-bar">
-   <div class="left-section">
-      <img src="/icon.png" alt="icon">
-      <a href="index.html" class="span-link"><span>Nyx V1</span></a>
-   </div>
-   <div class="right-section">
-     
-     
-   </div>
-</div>
+         <div class="top-bar">
+            <div class="left-section">
+               <img src="/icon.png" alt="icon">
+               <a href="index.html" class="span-link"><span>Nyx V1</span></a>
+            </div>
+            <div class="right-section">
+              
+            </div>
+         </div>
 
-        
+         <!-- Cloaking Buttons -->
+         <div class="button-container">
+            <button class="cloak-button" onclick="driveCloak()">Cloak as Google Drive</button>
+            <button class="cloak-button" onclick="googleCloak()">Cloak as Google Docs</button>
+         </div>
 
-     
+      </div>
+
       <script>
-VANTA.FOG({
-  el: "#vanta-bg",
-  mouseControls: true,
-  touchControls: true,
-  gyroControls: false,
-  minHeight: 200.00,
-  minWidth: 200.00,
-  highlightColor: 0x0,
-  midtoneColor: 0x0,
-  lowlightColor: 0x0,
-  baseColor: 0x4a4a4a
-})
-</script>
+         VANTA.FOG({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            highlightColor: 0x0,
+            midtoneColor: 0x0,
+            lowlightColor: 0x0,
+            baseColor: 0x4a4a4a
+         });
 
-    
+         function driveCloak() {
+            localStorage.setItem('cloakedTitle', 'My Drive - Google Drive');
+            localStorage.setItem('cloakedIcon', 'https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png');
+            tabCloak();
+         }
+
+         function googleCloak() {
+            localStorage.setItem('cloakedTitle', 'Google Docs');
+            localStorage.setItem('cloakedIcon', 'https://ssl.gstatic.com/images/branding/product/1x/docs_2020q4_32dp.png');
+            tabCloak();
+         }
+
+         function tabCloak() {
+            var newTitle = localStorage.getItem('cloakedTitle');
+            var newIcon = localStorage.getItem('cloakedIcon');
+
+            if (newTitle === null || newTitle === '') {
+               alert('No Cloak Detected. Please select one in settings.');
+            } else {
+               localStorage.setItem('tabTitle', newTitle);
+               localStorage.setItem('tabIcon', newIcon);
+               document.title = newTitle;
+               var icon = document.querySelector('link[rel="icon"]');
+               icon.setAttribute('href', newIcon);
+            }
+         }
+      </script>
 
       <script src="uv/uv.bundle.js" charset="UTF-8" defer></script>
       <script src="uv/uv.config.js" charset="UTF-8" defer></script>
