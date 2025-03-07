@@ -105,63 +105,66 @@
             baseColor: 0x4a4a4a
          });
 
-         // Function to apply theme to Vanta fog
-         function applyTheme(theme) {
-            const themes = {
-               dark: {
-                  highlightColor: 0x0,
-                  midtoneColor: 0x0,
-                  lowlightColor: 0x0,
-                  baseColor: 0x4a4a4a
-               },
-               light: {
-                   highlightColor: 0x0,
-                  midtoneColor: 0x0,
-                  lowlightColor: 0x0,
-                  baseColor: 0xffffff
-               },
-               sunset: {
-                 highlightColor: 0x0,
-                  midtoneColor: 0x0,
-                  lowlightColor: 0x0,
-                  baseColor: 0xfd5e53
-               },
-               hacker: {
-                  highlightColor: 0x0,
-                  midtoneColor: 0x0,
-                  lowlightColor: 0x0,
-                  baseColor: 0x61CF5A
-               }
-            };
-
-            vantaEffect.setOptions(themes[theme]);
-            localStorage.setItem('theme', theme);
+       // Function to apply theme to Vanta fog and save it in localStorage
+   function applyTheme(theme) {
+      const themes = {
+         dark: {
+            highlightColor: 0x0,
+            midtoneColor: 0x0,
+            lowlightColor: 0x0,
+            baseColor: 0x4a4a4a
+         },
+         light: {
+            highlightColor: 0x0,
+            midtoneColor: 0x0,
+            lowlightColor: 0x0,
+            baseColor: 0xffffff
+         },
+         sunset: {
+            highlightColor: 0x0,
+            midtoneColor: 0x0,
+            lowlightColor: 0x0,
+            baseColor: 0xfd5e53
+         },
+         hacker: {
+            highlightColor: 0x0,
+            midtoneColor: 0x0,
+            lowlightColor: 0x0,
+            baseColor: 0x61CF5A
          }
+      };
 
-         // Check for stored theme in localStorage
-         window.onload = function() {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-               applyTheme(savedTheme);
-            }
-         };
+      // Apply the selected theme to Vanta fog
+      vantaEffect.setOptions(themes[theme]);
 
-         // Theme Button Functions
-         function themeDark() {
-            applyTheme('dark');
-         }
+      // Save the theme to localStorage
+      localStorage.setItem('theme', theme);
+   }
 
-         function themeLight() {
-            applyTheme('light');
-         }
+   // Theme Button Functions
+   function themeDark() {
+      applyTheme('dark');
+   }
 
-         function themeSunset() {
-            applyTheme('sunset');
-         }
+   function themeLight() {
+      applyTheme('light');
+   }
 
-         function themeHacker() {
-            applyTheme('hacker');
-         }
+   function themeSunset() {
+      applyTheme('sunset');
+   }
+
+   function themeHacker() {
+      applyTheme('hacker');
+   }
+
+   // Check for stored theme in localStorage on page load
+   window.onload = function() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+         applyTheme(savedTheme);
+      }
+   };
 
          function driveCloak() {
             localStorage.setItem('cloakedTitle', 'My Drive - Google Drive');
