@@ -83,64 +83,65 @@
 
          
     // Initialize VANTA.FOG for background
-VANTA.FOG({
-   el: "#vanta-bg",
-   mouseControls: true,
-   touchControls: true,
-   gyroControls: false,
-   minHeight: 200.00,
-   minWidth: 200.00,
-   highlightColor: 0x0,
-   midtoneColor: 0x0,
-   lowlightColor: 0x0,
-   baseColor: 0x4a4a4a
-});
+
 
 // Call tabCloak() to set the title and icon on page load
 tabCloak(); 
 
 
-         // Function to apply theme to Vanta fog
-         function applyTheme(theme) {
-            const themes = {
-               dark: {
-                  highlightColor: 0x0,
-                  midtoneColor: 0x0,
-                  lowlightColor: 0x0,
-                  baseColor: 0x4a4a4a
-               },
-               light: {
-                   highlightColor: 0x0,
-                  midtoneColor: 0x0,
-                  lowlightColor: 0x0,
-                  baseColor: 0xffffff
-               },
-               sunset: {
-                 highlightColor: 0x0,
-                  midtoneColor: 0x0,
-                  lowlightColor: 0x0,
-                  baseColor: 0xfd5e53
-               },
-               hacker: {
-                  highlightColor: 0x0,
-                  midtoneColor: 0x0,
-                  lowlightColor: 0x0,
-                  baseColor: 0x61CF5A
-               }
-            };
+        // Initialize VANTA.FOG for background and store it in vantaEffect
+   let vantaEffect = VANTA.FOG({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      highlightColor: 0x0,
+      midtoneColor: 0x0,
+      lowlightColor: 0x0,
+      baseColor: 0x4a4a4a
+   });
 
-            vantaEffect.setOptions(themes[theme]);
-            localStorage.setItem('theme', theme);
-         }
+   // Function to apply theme to Vanta fog
+   function applyTheme(theme) {
+      console.log("Applying theme:", theme);
 
-         // Check for stored theme in localStorage
-         window.onload = function() {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-               applyTheme(savedTheme);
-            }
-         };
+      const themes = {
+         dark: { highlightColor: 0x0, midtoneColor: 0x0, lowlightColor: 0x0, baseColor: 0x4a4a4a },
+         light: { highlightColor: 0x0, midtoneColor: 0x0, lowlightColor: 0x0, baseColor: 0xffffff },
+         sunset: { highlightColor: 0x0, midtoneColor: 0x0, lowlightColor: 0x0, baseColor: 0xfd5e53 },
+         hacker: { highlightColor: 0x0, midtoneColor: 0x0, lowlightColor: 0x0, baseColor: 0x61CF5A }
+      };
 
+      if (!themes[theme]) {
+         console.error("Invalid theme:", theme);
+         return;
+      }
+
+      console.log("Theme settings:", themes[theme]);
+
+      if (vantaEffect && vantaEffect.setOptions) {
+         vantaEffect.setOptions(themes[theme]);
+         console.log("Theme applied successfully");
+      } else {
+         console.error("Vanta effect not initialized properly");
+      }
+
+      localStorage.setItem('theme', theme);
+   }
+
+   // Check for stored theme in localStorage
+   window.onload = function() {
+      const savedTheme = localStorage.getItem('theme');
+      console.log("Stored theme:", savedTheme);
+
+      if (savedTheme) {
+         applyTheme(savedTheme);
+      } else {
+         console.log("No theme found in localStorage, using default");
+      }
+   };
       </script>
 
       <script src="uv/uv.bundle.js" charset="UTF-8" defer></script>
