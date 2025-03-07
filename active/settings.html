@@ -95,6 +95,7 @@
             <button class="cloak-button" onclick="themeSunset()">Sunset</button>
             <button class="cloak-button" onclick="themeHacker()">Hacker</button>
             <button class="cloak-button" onclick="themeLava()">Lava</button>
+            <button class="cloak-button" onclick="themeShock()">Shock</button>
          </div>
       </div>
 
@@ -145,6 +146,12 @@
             midtoneColor: 0x0,
             lowlightColor: 0x0,
             baseColor: 0xE42217
+         },
+           shock: {
+            highlightColor: 0x0,
+            midtoneColor: 0x0,
+            lowlightColor: 0x0,
+            baseColor: 0xE42217
          }
       };
 
@@ -173,6 +180,9 @@
    }
           function themeLava() {
       applyTheme('lava');
+   }
+         function themeShock() {
+      applyTheme('shock');
    }
 
    // Check for stored theme in localStorage on page load
