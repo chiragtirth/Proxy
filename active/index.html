@@ -101,26 +101,46 @@
             tabCloak(); 
          });
 
-         // Function to apply the theme to the page
-   function applyTheme(theme) {
-      // Remove existing theme classes from the body
-      document.body.classList.remove('dark-theme', 'light-theme', 'sunset-theme', 'hacker-theme');
-      
-      // Add the selected theme class to the body
-      document.body.classList.add(theme);
+           // Function to apply theme to Vanta fog
+         function applyTheme(theme) {
+            const themes = {
+               dark: {
+                  highlightColor: 0x333333,
+                  midtoneColor: 0x555555,
+                  lowlightColor: 0x111111,
+                  baseColor: 0x000000
+               },
+               light: {
+                  highlightColor: 0xdddddd,
+                  midtoneColor: 0xaaaaaa,
+                  lowlightColor: 0x888888,
+                  baseColor: 0xffffff
+               },
+               sunset: {
+                  highlightColor: 0xFF4500,
+                  midtoneColor: 0xFFD700,
+                  lowlightColor: 0x8B0000,
+                  baseColor: 0xFF6347
+               },
+               hacker: {
+                  highlightColor: 0x00ff00,
+                  midtoneColor: 0x00cc00,
+                  lowlightColor: 0x003300,
+                  baseColor: 0x000000
+               }
+            };
 
-      // Store the theme in localStorage so it persists across pages
-      localStorage.setItem('theme', theme);
-   }
+            vantaEffect.setOptions(themes[theme]);
+            localStorage.setItem('theme', theme);
+         }
 
-   // Wait for the DOM to be fully loaded
-   document.addEventListener("DOMContentLoaded", function() {
-      // Check if a theme is stored in localStorage and apply it
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
-         applyTheme(savedTheme);
-      }
-   });
+         // Check for stored theme in localStorage
+         window.onload = function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+               applyTheme(savedTheme);
+            }
+         };
 
       </script>
 
