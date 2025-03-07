@@ -88,9 +88,9 @@ body {
 
 /* Header Styling */
 #content h2 {
-   margin-bottom: 20px;
+   margin-bottom: 0px;
    font-family: "Exo", sans-serif !important; 
-   font-size: 96px;
+   font-size: 50px;
    color: #e0e0e0;
    transition: all 0.3s ease;
    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
