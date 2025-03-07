@@ -101,49 +101,46 @@
             tabCloak(); 
          });
 
-          // Function to apply the theme to Vanta fog and retrieve the saved theme from localStorage
-   function applyTheme(theme) {
-      const themes = {
-         dark: {
-            highlightColor: 0x0,
-            midtoneColor: 0x0,
-            lowlightColor: 0x0,
-            baseColor: 0x4a4a4a
-         },
-         light: {
-            highlightColor: 0x0,
-            midtoneColor: 0x0,
-            lowlightColor: 0x0,
-            baseColor: 0xffffff
-         },
-         sunset: {
-            highlightColor: 0x0,
-            midtoneColor: 0x0,
-            lowlightColor: 0x0,
-            baseColor: 0xfd5e53
-         },
-         hacker: {
-            highlightColor: 0x0,
-            midtoneColor: 0x0,
-            lowlightColor: 0x0,
-            baseColor: 0x61CF5A
+         // Function to apply theme to Vanta fog
+         function applyTheme(theme) {
+            const themes = {
+               dark: {
+                  highlightColor: 0x0,
+                  midtoneColor: 0x0,
+                  lowlightColor: 0x0,
+                  baseColor: 0x4a4a4a
+               },
+               light: {
+                   highlightColor: 0x0,
+                  midtoneColor: 0x0,
+                  lowlightColor: 0x0,
+                  baseColor: 0xffffff
+               },
+               sunset: {
+                 highlightColor: 0x0,
+                  midtoneColor: 0x0,
+                  lowlightColor: 0x0,
+                  baseColor: 0xfd5e53
+               },
+               hacker: {
+                  highlightColor: 0x0,
+                  midtoneColor: 0x0,
+                  lowlightColor: 0x0,
+                  baseColor: 0x61CF5A
+               }
+            };
+
+            vantaEffect.setOptions(themes[theme]);
+            localStorage.setItem('theme', theme);
          }
-      };
 
-      // Apply the selected theme to Vanta fog
-      vantaEffect.setOptions(themes[theme]);
-   }
-
-   // Check for stored theme in localStorage
-   window.onload = function() {
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
-         applyTheme(savedTheme);
-      } else {
-         // Default to dark theme if no theme is saved
-         applyTheme('dark');
-      }
-   };
+         // Check for stored theme in localStorage
+         window.onload = function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+               applyTheme(savedTheme);
+            }
+         };
 
       </script>
 
