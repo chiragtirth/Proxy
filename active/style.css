@@ -12,7 +12,8 @@ body {
    min-height: 100vh;
    display: flex;
    flex-direction: column;
-   justify-content: flex-start; /* Aligns the content to the top */
+   justify-content: flex-start; /* Keep it aligned to the top */
+   padding-top: 80px; /* Push the content below the top bar */
    text-align: center;
    font-family: 'Exo', sans-serif;
 }
@@ -85,11 +86,9 @@ body {
    transform: scale(1.05);
 }
 
-/* Header Styling */
 #content h2 {
-   margin-bottom: 0px;
-      margin-top: 80px; /* Pushes it below the top bar */
-   font-family: "Exo", sans-serif !important; 
+   margin-bottom: 0;
+   font-family: "Exo", sans-serif !important;
    font-size: 50px;
    color: #e0e0e0;
    transition: all 0.3s ease;
