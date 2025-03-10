@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://www.desmos.com/api/v1.6/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+    <style>
+      
+        #calculator {
+            width: 600px;
+            height: 400px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+        }
+        #standardCalculator {
+            margin: 20px auto;
+            padding: 10px;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+     
+    </style>
+</head>
+<body>
+   
+    
+   
+   
+    
+    <div id="calculator"></div>
+    
+ 
+    
+    <script>
+        var elt = document.getElementById('calculator');
+        var calculator = Desmos.GraphingCalculator(elt);
+
+        function plotGraph() {
+            let inputFunction = document.getElementById('functionInput').value;
+            calculator.setExpression({ id: 'graph1', latex: inputFunction });
+        }
+
+        function calculate() {
+            let input = document.getElementById('calcInput').value;
+            try {
+                let result = eval(input);
+                document.getElementById('calcResult').innerText = "Result: " + result;
+            } catch (error) {
+                document.getElementById('calcResult').innerText = "Error";
+            }
+        }
+    </script>
+</body>
+</html>
