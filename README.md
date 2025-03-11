@@ -1,6 +1,6 @@
 # Nyx
 ## Nyx does not require a server so it can be deployed through github pages!
-### Nyx has lots of appeling things
+### Nyx has lots of appealing things
 ### - cool
 ### - Themes
 ### - Games
