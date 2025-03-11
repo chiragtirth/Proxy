@@ -1,5 +1,13 @@
 # Nyx
 ## Nyx does not require a server so it can be deployed through github pages!
+### Nyx has lots of appeling things
+### - cool
+### - Themes
+### - Games
+### - AI
+### - Apps
+### - Cloaking
+### - And more to come!
 
 
 ## lemme go get the deploy buttons:
