@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nyx V1 | Bitlife</title>
+  <link rel="icon" type="image/x-icon" href="/icon.png">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <iframe src="index.html"></iframe>
+</body>
+  <script>
+     function tabCloak() {
+            var newTitle = localStorage.getItem('cloakedTitle');
+            var newIcon = localStorage.getItem('cloakedIcon');
+
+            if (newTitle === null || newTitle === '') {
+               alert('No Cloak Detected. Please select one in settings.');
+            } else {
+               localStorage.setItem('tabTitle', newTitle);
+               localStorage.setItem('tabIcon', newIcon);
+               document.title = newTitle;
+               var icon = document.querySelector('link[rel="icon"]');
+               icon.setAttribute('href', newIcon);
+            }
+         }
+      
+         tabCloak();
+    
+  </script>
+  
+</html>
