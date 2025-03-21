@@ -165,14 +165,43 @@ body {
    color: white;
    text-decoration: none;
    font-size: 16px;
-   transition: color 0.3s ease;
+   transition: all 0.3s ease-in-out;
 }
 
 .right-section a:hover {
    color: white;
-   text-shadow: 0 0 8px white;
+   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                0 0 20px rgba(255, 255, 255, 0.6), 
+                0 0 30px rgba(255, 255, 255, 0.4);
 }
 
+/* Settings Icon Glow Effect */
+.settings-icon {
+   color: white;
+   font-size: 40px;
+   margin-right: 10px;
+   text-decoration: none;
+   transition: text-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.settings-icon:hover {
+   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                0 0 20px rgba(255, 255, 255, 1);
+   transform: scale(1.1);
+}
+
+/* GitHub and Vanta Link Glow */
+.github-link, .vanta-link {
+   transition: text-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.github-link:hover, .vanta-link:hover {
+   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                0 0 20px rgba(255, 255, 255, 1);
+   transform: scale(1.05);
+}
+
+/* GitHub and Vanta Links Styling */
 .github-link {
    color: white;
    position: fixed; /* Ensure it appears */
@@ -184,6 +213,7 @@ body {
    text-decoration: none;
    transition: all 0.3s ease;
 }
+
 .github-link:hover {
    background: rgba(255, 255, 255, 0.3);
 }
@@ -199,20 +229,7 @@ body {
    text-decoration: none;
    transition: all 0.3s ease;
 }
+
 .vanta-link:hover {
    background: rgba(255, 255, 255, 0.3);
 }
-
-
-.settings-icon {
-         color: white;
-         font-size: 40px;
-         margin-right: 10px;
-         text-decoration: none;
-         transition: 0.3s;
-      }
-
-      .settings-icon:hover {
-         text-shadow: 0 0 10px white;
-      }
-
