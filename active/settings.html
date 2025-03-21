@@ -94,6 +94,7 @@
             <button class="cloak-button" onclick="driveCloak()">Cloak as Google Drive</button>
             <button class="cloak-button" onclick="docsCloak()">Cloak as Google Docs</button>
             <button class="cloak-button" onclick="canvasCloak()">Cloak as Canvas</button>
+            <button class="cloak-button" onclick="ciscoCloak()">Cloak as Cisco Blocked</button>
          </div>
 
          <h2>Themes:</h2>
@@ -240,6 +241,14 @@
             tabCloak();
          }
 
+
+          function ciscoCloak() {
+            localStorage.setItem('cloakedTitle', 'Site Blocked');
+            localStorage.setItem('cloakedIcon', 'https://cdn.umbrella.marketops.umbrella.com/wp-content/uploads/2020/03/25162453/cropped-cisco-favicon-32x32.png');
+            tabCloak();
+         }
+
+         
          function tabCloak() {
             var newTitle = localStorage.getItem('cloakedTitle');
             var newIcon = localStorage.getItem('cloakedIcon');
