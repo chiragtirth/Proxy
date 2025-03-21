@@ -41,29 +41,36 @@
             color: white;
             
          }
-         .button-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            margin-top: 50px;
-         }
-         .cloak-button {
-            background: transparent;
-            border: 2px solid white;
-            color: white;
-            font-size: 18px;
-            padding: 10px 20px;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: 0.3s;
-            font-family: 'Exo', sans-serif;
-            display: inline-block;
-         }
-         .cloak-button:hover {
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 0 10px white;
-         }
+    .button-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 8 fixed columns */
+    gap: 20px;
+    width: 80%;
+    max-width: 1000px; /* Adjust as needed */
+    margin: 50px auto;
+    justify-content: center;
+}
+
+
+.cloak-button {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Exo', sans-serif;
+    text-align: center;
+    width: 100%;
+}
+
+.cloak-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px white;
+}
+
       </style>
    </head>
    <body>
