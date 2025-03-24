@@ -15,7 +15,7 @@
       <link href="style.css" rel="stylesheet">
       
       <style>
-        body, html {
+         body, html {
    margin: 0;
    padding: 0;
    height: 100%;
@@ -41,30 +41,35 @@
             color: white;
             
          }
-         .button-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            margin-top: 50px;
-         }
-         .cloak-button {
-            background: transparent;
-            border: 2px solid white;
-            color: white;
-            font-size: 18px;
-            padding: 10px 20px;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: 0.3s;
-            font-family: 'Exo', sans-serif;
-            display: inline-block;
-            z-index: 1000;
-         }
-         .cloak-button:hover {
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 0 10px white;
-         }
+    .button-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 8 fixed columns */
+    gap: 20px;
+    width: 80%;
+    max-width: 1000px; /* Adjust as needed */
+    margin: 50px auto;
+    justify-content: center;
+}
+
+
+.cloak-button {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Exo', sans-serif;
+    text-align: center;
+    width: 100%;
+}
+
+.cloak-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px white;
+}
       </style>
    </head>
    <body>
@@ -84,10 +89,12 @@
          <h2>Apps:</h2>
          <!-- Cloaking Buttons -->
          <div class="button-container">
-           <a href="apps/ai.html"><button class="cloak-button">AI</button></a>
-            <a href="apps/emu.html"><button class="cloak-button">Emulator</button></a>
-           <a href="apps/emu2.html"><button class="cloak-button">Ruffle</button></a>
-          <a href="apps/gc.html"><button class="cloak-button">Graphing Calculator</button></a> 
+         <a href="apps/ai.html"><button class="cloak-button">AI</button></a>
+         <a href="apps/emu.html"><button class="cloak-button">Emulator</button></a>
+         <a href="apps/emu2.html"><button class="cloak-button">Ruffle</button></a>
+         <a href="apps/gc.html"><button class="cloak-button">Graphing Calculator</button></a> 
+         <a href="apps/discord.html"><button class="cloak-button">Discord</button></a> 
+
 
          </div>
 
