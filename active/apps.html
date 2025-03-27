@@ -70,6 +70,56 @@
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 10px white;
 }
+
+         /* Cool Search Bar */
+.input-container {
+   position: relative;
+   width: 100vw;
+   max-width: 500px;
+   margin: 20px auto; /* Centers the search bar */
+}
+
+.input {
+   color: #fff;
+   font-size: 1rem;
+   background-color: rgba(255, 255, 255, 0.1);
+   width: 100%;
+   box-sizing: border-box;
+   padding: 12px 20px 12px 50px;
+   border: 2px solid transparent;
+   border-radius: 25px;
+   transition: all 0.3s ease;
+   outline: none;
+   font-family: 'Exo', sans-serif;
+}
+
+.input:hover, .input:focus {
+   border-color: white;
+   box-shadow: 0 0 10px white;
+}
+
+/* Search Icon */
+.input-container .fa-search {
+   position: absolute;
+   left: 15px;
+   top: 50%;
+   transform: translateY(-50%);
+   color: white;
+   font-size: 1.2rem;
+   pointer-events: none;
+}
+
+/* Placeholder Fade */
+.input::placeholder {
+   color: #aaa;
+   transition: all 0.3s ease;
+}
+
+.input:focus::placeholder {
+   color: white;
+   opacity: 0.6;
+}
+
       </style>
    </head>
    <body>
@@ -87,6 +137,12 @@
          </div>
 
          <h2>Apps:</h2>
+
+         <div class="input-container">
+   <i class="fa fa-search"></i>
+   <input type="text" id="searchBar" class="input" placeholder="Search apps..." onkeyup="filterApps()">
+</div>
+
          
          <div class="button-container">
          <a href="apps/ai.html"><button class="cloak-button">AI</button></a>
@@ -104,6 +160,24 @@
 
         
   </div>
+
+      <script>
+           function filterApps() {
+      let input = document.getElementById('searchBar').value.toLowerCase();
+      let buttons = document.querySelectorAll('.cloak-button');
+
+      buttons.forEach(button => {
+         let gameName = button.textContent.toLowerCase();
+         let parentLink = button.parentElement; // Get the parent <a> element
+
+         if (gameName.includes(input)) {
+            parentLink.style.display = 'block';
+         } else {
+            parentLink.style.display = 'none';
+         }
+      });
+   }
+      </script>
 
       <script>
          // Default fog settings
