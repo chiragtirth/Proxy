@@ -71,6 +71,56 @@
     box-shadow: 0 0 10px white;
 }
 
+   /* Cool Search Bar */
+.input-container {
+   position: relative;
+   width: 100vw;
+   max-width: 500px;
+   margin: 20px auto; /* Centers the search bar */
+}
+
+.input {
+   color: #fff;
+   font-size: 1rem;
+   background-color: rgba(255, 255, 255, 0.1);
+   width: 100%;
+   box-sizing: border-box;
+   padding: 12px 20px 12px 50px;
+   border: 2px solid transparent;
+   border-radius: 25px;
+   transition: all 0.3s ease;
+   outline: none;
+   font-family: 'Exo', sans-serif;
+}
+
+.input:hover, .input:focus {
+   border-color: white;
+   box-shadow: 0 0 10px white;
+}
+
+/* Search Icon */
+.input-container .fa-search {
+   position: absolute;
+   left: 15px;
+   top: 50%;
+   transform: translateY(-50%);
+   color: white;
+   font-size: 1.2rem;
+   pointer-events: none;
+}
+
+/* Placeholder Fade */
+.input::placeholder {
+   color: #aaa;
+   transition: all 0.3s ease;
+}
+
+.input:focus::placeholder {
+   color: white;
+   opacity: 0.6;
+}
+
+
       </style>
    </head>
    <body>
@@ -88,7 +138,11 @@
          </div>
 
          <h2>Games:</h2>
-         <input type="text" id="searchBar" placeholder="Search games..." onkeyup="filterGames()">
+         <div class="input-container">
+   <i class="fa fa-search"></i>
+   <input type="text" id="searchBar" class="input" placeholder="Search games..." onkeyup="filterGames()">
+</div>
+
      
          <div class="button-container">
             <a href="games/slope/embed.html"><button class="cloak-button">Slope</button></a>
