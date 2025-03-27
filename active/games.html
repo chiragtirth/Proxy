@@ -88,6 +88,7 @@
          </div>
 
          <h2>Games:</h2>
+         <input type="text" id="searchBar" placeholder="Search games..." onkeyup="filterGames()">
      
          <div class="button-container">
             <a href="games/slope/embed.html"><button class="cloak-button">Slope</button></a>
@@ -145,6 +146,24 @@
 
         
   </div>
+
+      <script>
+         function filterGames() {
+      let input = document.getElementById('searchBar').value.toLowerCase();
+      let buttons = document.querySelectorAll('.cloak-button');
+
+      buttons.forEach(button => {
+         let gameName = button.textContent.toLowerCase();
+         let parentLink = button.parentElement; 
+
+         if (gameName.includes(input)) {
+            parentLink.style.display = 'block';
+         } else {
+            parentLink.style.display = 'none';
+         }
+      });
+   }
+      </script>
 
       <script>
          // Default fog settings
