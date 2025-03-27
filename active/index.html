@@ -91,78 +91,20 @@
          }
 
          
-    // Initialize VANTA.FOG for background
 
 
 // Call tabCloak() to set the title and icon on page load
 tabCloak(); 
 
 
-        // Initialize VANTA.FOG for background and store it in vantaEffect
-   let vantaEffect = VANTA.FOG({
-      el: "#vanta-bg",
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      highlightColor: 0x0,
-      midtoneColor: 0x0,
-      lowlightColor: 0x0,
-      baseColor: 0x4a4a4a
-   });
-
-   // Function to apply theme to Vanta fog
-   function applyTheme(theme) {
-      console.log("Applying theme:", theme);
-
-      const themes = {
-         dark: { highlightColor: 0x0, midtoneColor: 0x0, lowlightColor: 0x0, baseColor: 0x4a4a4a },
-         light: { highlightColor: 0x0, midtoneColor: 0x0, lowlightColor: 0x0, baseColor: 0xffffff },
-         sunset: { highlightColor: 0x0, midtoneColor: 0x0, lowlightColor: 0x0, baseColor: 0xfd5e53 },
-         hacker: { highlightColor: 0x0, midtoneColor: 0x0, lowlightColor: 0x0, baseColor: 0x61CF5A },
-          lava: { highlightColor: 0x0, midtoneColor: 0x0, lowlightColor: 0x0, baseColor: 0xE42217 },
-          shock: { highlightColor: 0x0, midtoneColor: 0x0, lowlightColor: 0x0, baseColor: 0xcde746 },
-          deepsea: { highlightColor: 0x0, midtoneColor: 0x0, lowlightColor: 0x0, baseColor: 0x0000FF },
-           nautical: { highlightColor: 0x0, midtoneColor: 0x0, lowlightColor: 0x0, baseColor: 0x00FFFF }
-         
-      };
-
-      if (!themes[theme]) {
-         console.error("Invalid theme:", theme);
-         return;
-      }
-
-      console.log("Theme settings:", themes[theme]);
-
-      if (vantaEffect && vantaEffect.setOptions) {
-         vantaEffect.setOptions(themes[theme]);
-         console.log("Theme applied successfully");
-      } else {
-         console.error("Vanta effect not initialized properly");
-      }
-
-      localStorage.setItem('theme', theme);
-   }
-
-   // Check for stored theme in localStorage
-   window.onload = function() {
-      const savedTheme = localStorage.getItem('theme');
-      console.log("Stored theme:", savedTheme);
-
-      if (savedTheme) {
-         applyTheme(savedTheme);
-      } else {
-         console.log("No theme found in localStorage, using default");
-      }
-   };
-      </script>
+            </script>
 
       <script src="uv/uv.bundle.js" charset="UTF-8" defer></script>
       <script src="uv/uv.config.js" charset="UTF-8" defer></script>
       <script src="register-sw.js" charset="UTF-8" defer></script>
       <script src="search.js" charset="UTF-8" defer></script>
       <script src="index.js" charset="UTF-8" defer></script>
+      <script src="js/vantabg.js" charset="UTF-8" defer></script>
       <script src="tabcloak.js" charset="UTF-8" defer></script>
    </body>
 </html>
