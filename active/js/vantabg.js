@@ -62,7 +62,14 @@
             midtoneColor: 0x0,
             lowlightColor: 0x0,
             baseColor: 0x00FFFF
+         },
+         barney: {
+            highlightColor: 0x0,
+            midtoneColor: 0x0,
+            lowlightColor: 0x0,
+            baseColor: 0x301934
          }
+               
       };
 
       // Apply the selected theme to Vanta fog
@@ -99,6 +106,10 @@
    }
          function themeNautical() {
       applyTheme('nautical');
+   }
+
+function themeBarney() {
+      applyTheme('barney');
    }
 
    // Check for stored theme in localStorage on page load
