@@ -67,7 +67,7 @@
             highlightColor: 0x0,
             midtoneColor: 0x0,
             lowlightColor: 0x0,
-            baseColor: 0x301934
+            baseColor: 0x7d37af
          }
                
       };
