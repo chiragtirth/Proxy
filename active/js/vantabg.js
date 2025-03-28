@@ -108,7 +108,7 @@
       applyTheme('nautical');
    }
 
-function themeBarney() {
+         function themeBarney() {
       applyTheme('barney');
    }
 
