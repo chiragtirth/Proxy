@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Welcome to Atlas</title>
+        <script src="snowstorm.js"></script>
+        <style>
+            body {
+                color: white;
+                background-color: #000000;
+                text-align: center;
+                font-family: "Rye";
+                font-weight: 400;
+                font-style: normal;
+            }
+            
+            a {
+                color: white;
+                text-decoration: none;
+                display: block;
+            }
+            
+            #directory {
+                color: white;
+                margin: 0 auto;
+                padding: 20px;
+                max-width: 800px;
+            }
+        </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+    <h1>Atlas V2</h1>
+    <p>press the search button to search</p>
+    <script src='atlas.js'></script>
+</head>
+<body>
+    <center>    <input type="text" id="search-input" placeholder="Search for games..." onkeyup="clickPress()"><button id="search" onclick="doSearch(document.getElementById('search-input').value)">search</button>
+        <div id="source-boxes"></div><input id="flashpoint" type="checkbox"><label>flashpoint</label><input id="github" type="checkbox" onclick="loadGithub()"><label>github</label>
+        <div id="link-container">
+        </div></center>
+</body>
+</html>
