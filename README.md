@@ -1,6 +1,6 @@
 # Nyx 
 
-### Nyx does not require a server (well it does but it is hosted elsewhere) so it can be deployed through github pages and any other static hosting provider
+### Nyx does not require a server (well it does but it is hosted elsewhere) so it can be hosted on static providers. (but not github pages)
 ### Nyx has lots of cool things
 ### - Looks cool
 ### - Themes
