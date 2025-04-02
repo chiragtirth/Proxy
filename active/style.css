@@ -80,7 +80,7 @@ body {
 
 /* Header Styling */
 #content h1 {
-   margin-bottom: 20px;
+   margin-bottom: 0px;
    font-family: "Exo", sans-serif !important; 
    font-size: 96px;
    color: #e0e0e0;
