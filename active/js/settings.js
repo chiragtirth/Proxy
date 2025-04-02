@@ -99,6 +99,7 @@ function vantaOn() {
             lowlightColor: 0x0,
             baseColor: 0x4a4a4a
         });
+     applyTheme();
     }
 }
 
