@@ -13,30 +13,29 @@
       <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
       <link href="style.css" rel="stylesheet">
       <link href="css/main.css" rel="stylesheet">
-      
    </head>
    <body>
       <div id="vanta-bg"></div>
       <div id="content">
          <h1>Nyx</h1>
-        <div class="top-bar">
-    <div class="left-section">
-        <img src="./icon.png" alt="icon">
-        <a href="index.html" class="span-link"><span>Nyx</span></a>
-    </div>
-    <div class="right-section">
-        <a href="apps.html">
-            <i class="fas fa-rocket"></i> Apps
-        </a>
-        <a href="games.html">
-            <i class="fas fa-gamepad"></i> Games
-        </a>
-        <a href="settings.html" class="settings-icon">
-            <i class="fas fa-cog"></i> Settings
-        </a>
-    </div>
-</div>
-
+         <div class="top-bar">
+            <div class="left-section">
+               <img src="./icon.png" alt="icon">
+               <a href="index.html" class="span-link"><span>Nyx</span></a>
+            </div>
+            <div class="middle-section" id="weather-time"></div>
+            <div class="right-section">
+               <a href="apps.html">
+               <i class="fas fa-rocket"></i> Apps
+               </a>
+               <a href="games.html">
+               <i class="fas fa-gamepad"></i> Games
+               </a>
+               <a href="settings.html" class="settings-icon">
+               <i class="fas fa-cog"></i> Settings
+               </a>
+            </div>
+         </div>
          <form id="uv-form">
             <div class="input-container">
                <i class="fas fa-search"></i>
@@ -51,9 +50,41 @@
       </div>
       <a href="https://github.com/chompypotato/Nyx/" class="github-link">Github</a>
       <a href="https://www.vantajs.com/?effect=fog" class="vanta-link">Vantajs</a>
-
-
-     
+      <script>
+         async function fetchWeather() {
+             try {
+                 const ipResponse = await fetch('https://ipapi.co/json/');
+                 const ipData = await ipResponse.json();
+                 const lat = ipData.latitude;
+                 const lon = ipData.longitude;
+                 const country = ipData.country;
+                 const unit = country === 'US' ? 'imperial' : 'metric';
+                 
+                 const apiKey = 'bd5e378503939ddaee76f12ad7a97608';
+                 const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${unit}&appid=${apiKey}`);
+                 const weatherData = await weatherResponse.json();
+                 const temperature = Math.round(weatherData.main.temp);
+                 const weather = weatherData.weather[0].description;
+                 
+                 document.getElementById('weather-time').innerHTML = `${temperature}°${unit === 'imperial' ? 'F' : 'C'} - ${weather}`;
+             } catch (error) {
+                 console.error('Error fetching weather:', error);
+             }
+         }
+         
+         function updateTime() {
+             const now = new Date();
+             const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+             const dateString = now.toLocaleDateString();
+             const weatherTimeElem = document.getElementById('weather-time');
+             if (weatherTimeElem) {
+                 weatherTimeElem.innerHTML = `${weatherTimeElem.innerHTML.split('|')[0]} | ${dateString} ${timeString}`;
+             }
+         }
+         
+         fetchWeather();
+         setInterval(updateTime, 1000);
+      </script>
       <script src="uv/uv.bundle.js" charset="UTF-8" defer></script>
       <script src="uv/uv.config.js" charset="UTF-8" defer></script>
       <script src="register-sw.js" charset="UTF-8" defer></script>
