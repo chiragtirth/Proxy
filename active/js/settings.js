@@ -75,3 +75,13 @@
 }
 
          tabCloak();
+
+function vantaOff() {
+    if (window.VANTA) {
+        if (window.VANTA.current) {
+            window.VANTA.current.destroy(); // Remove the Vanta background
+        }
+    }
+    document.body.style.backgroundColor = "black"; // Set background to black
+}
+
