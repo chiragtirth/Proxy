@@ -85,3 +85,22 @@ function vantaOff() {
     document.body.style.backgroundColor = "black"; // Set background to black
 }
 
+function vantaOn() {
+    if (window.VANTA) {
+        window.VANTA.FOG({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            highlightColor: 0x0,
+            midtoneColor: 0x0,
+            lowlightColor: 0x0,
+            baseColor: 0x4a4a4a
+        });
+    }
+}
+
+    
+
