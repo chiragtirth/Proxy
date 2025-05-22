@@ -1,5 +1,3 @@
-# nyx has been shut down, now i am working on its second installation, flux. Flux will be much better including steps on how to set up your own server. you can find flux here: https://github.com/chompypotato/flux/
-
 # Nyx 
 
 ### Nyx does not require a server (well it does but it is hosted elsewhere) so it can be hosted on static providers. (but not github pages)
