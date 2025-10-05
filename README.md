@@ -1,7 +1,7 @@
-# Zevro 
+# Frosix 
 
-### Zevro is the newest proxy support ZevroAPI 1.0
-### Zevro has lots of cool things visit the homepage by going to Zevro.xyz
+### Frosix is powered by the new FrosixAPI
+### Frosix has lots of cool things visit the homepage by going to Frosix.xyz
 ### - Looks cool
 ### - Themes
 ### - Games
@@ -10,4 +10,4 @@
 ### - Cloaking(so you dont get caught)
 ### - And more to come!
 <hr>
-<a href="https://zevro.xyz">
+<a href="https://frosix.xyz">
