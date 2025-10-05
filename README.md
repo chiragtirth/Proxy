@@ -1,7 +1,7 @@
 # Frosix 
 
 ### Frosix is powered by the new FrosixAPI
-### Frosix has lots of cool things visit the homepage by going to Frosix.xyz
+### Frosix has lots of cool things visit the homepage by going to frosix.xyz, for more projects
 ### - Looks cool
 ### - Themes
 ### - Games
