@@ -1,17 +1,13 @@
-# Nyx 
+# Zevro 
 
-### Nyx does not require a server (well it does but it is hosted elsewhere) so it can be hosted on static providers. (but not github pages)
-### Nyx has lots of cool things
+### Zevro is the newest proxy support ZevroAPI 1.0
+### Zevro has lots of cool things visit the homepage by going to Zevro.xyz
 ### - Looks cool
 ### - Themes
 ### - Games
-### - AI
+### - AI(not mine chatgpt)
 ### - Apps
-### - Cloaking
+### - Cloaking(so you dont get caught)
 ### - And more to come!
 <hr>
-
-
-[![Deploy with Vercel](https://binbashbanana.github.io/deploy-buttons/buttons/remade/vercel.svg)](https://vercel.com/new/clone?repositoryurl=https://github.com/chompypotato/Nyx) 
-<a href="https://render.com/deploy?repo=https://github.com/chompypotato/Nyx">
-<img src="https://raw.githubusercontent.com/BinBashBanana/deploy-buttons/main/buttons/remade/render.svg"></img></a>
+<a href="https://zevro.xyz">
