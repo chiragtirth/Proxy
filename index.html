@@ -5,12 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Home</title>
   <link rel="icon" type="image/x-icon" href="https://canvas.instructure.com/favicon.ico">
-  <script src="start/cloak.js"></script>
-
- 
+  
+  <style>
+    #click-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh; 
+      z-index: 9999; 
+      cursor: pointer; 
+    }
+    
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+    }
+  </style>
 </head>
 <body>
+  <div id="click-overlay"></div>
+
   <h1>Nyx</h1>
-  <h3>Cloaking Nyx...</h3>
+  <h3>Click anywhere to open Nyx...</h3>
+
+  <script>
+    function openCloaker() {
+      try {
+        var win = window.open('about:blank', '_blank');
+        if (!win) {
+          throw new Error("Popup blocked");
+        }
+
+        var iframe = win.document.createElement('iframe');
+        iframe.style.width = "100%";
+        iframe.style.height = "100%";
+        iframe.style.border = "none";
+        iframe.src = "active/";
+
+        win.document.body.style.margin = "0";
+        win.document.body.style.height = "100vh";
+        win.document.body.appendChild(iframe);
+
+        win.document.title = '\u200B'; // zero-width space
+        var link = win.document.createElement('link');
+        link.rel = 'icon';
+        link.href = 'active/blankfavicon.ico';
+        win.document.head.appendChild(link);
+
+        window.location.replace("https://www.ixl.com/");
+      } catch (e) {
+        alert("Please allow popups and redirects for this site for the about:blank to open. (reload after)");
+      }
+    }
+
+    // This replaces 'window.onload'.
+    document.getElementById('click-overlay').addEventListener('click', openCloaker);
+  </script>
 </body>
 </html>
