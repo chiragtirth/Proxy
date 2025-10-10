@@ -18,7 +18,7 @@ function openCloaker() {
         win.document.title = '\u200B'; // zero-width space
         var link = win.document.createElement('link');
         link.rel = 'icon';
-        link.href = 'go/blank.ico';
+        link.href = 'active/blankfavicon.ico';
         win.document.head.appendChild(link);
 
         window.location.replace("https://www.ixl.com/");
