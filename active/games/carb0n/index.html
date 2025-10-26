@@ -6,13 +6,22 @@
   <title>Frosix | Games</title>
   <link rel="icon" type="image/x-icon" href="/icon.png">
   <script>
-    // Open games.frosix.xyz in a new tab, then optionally close this one
-    window.onload = function() {
-      window.open("https://games.frosix.xyz", "_blank");
-    };
-  </script>
-</head>
-<body>
-  <p>Opening Frosix Games in a new tab...</p>
-</body>
-</html>
+    document.addEventListener("DOMContentLoaded", () => {
+      // open in new tab
+      const newTab = window.open("https://games.frosix.xyz", "_blank");
+
+      if (!newTab) {
+        // fallback in case pop-ups are blocked
+        document.body.innerHTML = `
+          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;text-align:center;">
+            <h2>Popup blocked!</h2>
+            <p>Click below to open Frosix Games manually:</p>
+            <button onclick="window.open('https://games.frosix.xyz','_blank')" style="padding:10px 20px;font-size:16px;cursor:pointer;">Open Frosix Games</button>
+          </div>
+        `;
+      } else {
+        // optionally close the launcher tab after 1 second
+        setTimeout(() => window.close(), 1000);
+      }
+    });
+  </scri
