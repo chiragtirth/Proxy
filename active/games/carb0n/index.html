@@ -6,11 +6,13 @@
   <title>Frosix | Games</title>
   <link rel="icon" type="image/x-icon" href="/icon.png">
   <script>
-    // Redirect to games.frosix.xyz
-    window.location.href = "https://games.frosix.xyz";
+    // Open games.frosix.xyz in a new tab, then optionally close this one
+    window.onload = function() {
+      window.open("https://games.frosix.xyz", "_blank");
+    };
   </script>
 </head>
 <body>
-  <p>Redirecting to Frosix Games...</p>
+  <p>Opening Frosix Games in a new tab...</p>
 </body>
 </html>
